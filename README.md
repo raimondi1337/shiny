@@ -4,13 +4,13 @@ Make something shiny they said...
 Live version: dustin.raimondi.rocks/shiny
 
 Varibles you can play with from in the source or from the console:
-
+```
 maxNodeCount: 50 - controls length of line
 backgroundColor: "#202520"
 logFPS: false - enabling reduces fps...
 
-lineColor: "#00FF00"- use null for random color!
-particleColor: null- use null for random colors!
+lineColor: "#00FF00" - use null for random color!
+particleColor: null - use null for random colors!
 
 particlesPerFrame: 2
 bloomMultiplier: 2
