@@ -18,6 +18,8 @@ form
 {
 	font-family: 'Droid Sans', sans-serif;
 	color: rgba(200, 200, 200, 0.5);
+	float: right;
+	text-align: right;
 }
 
 input, input[type="checkbox"]
@@ -27,6 +29,7 @@ input, input[type="checkbox"]
 	background-color: rgba(255, 255, 255, 0.05);
 	border: none;
 	width: 50px;
+	float: right;
 }
 
 #canvas
