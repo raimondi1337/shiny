@@ -1,7 +1,7 @@
 # shiny
 Make something shiny they said...
 
-[Live version here](dustin.raimondi.rocks/shiny)
+[Live version here](http://dustin.raimondi.rocks/shiny)
 
 Varibles you can play with from in the source or from the console:
 ```
