@@ -1,40 +1,36 @@
 @charset "utf-8";
-
-body
-{
-	background-color: #202520;
+body {
+    background-color: #202520;
 }
 
-img
-{
-	position: absolute;
-  	top: 50%;
-  	left: 50%;
-  	transform: translate(-50%, -50%);
-  	opacity: 0.15;
+img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.15;
 }
 
-form
-{
-	font-family: 'Droid Sans', sans-serif;
-	color: rgba(200, 200, 200, 0.5);
-	float: right;
-	text-align: right;
+form {
+    font-family: 'Droid Sans', sans-serif;
+    color: rgba(200, 200, 200, 0.5);
+    float: right;
+    text-align: right;
 }
 
-input, input[type="checkbox"]
-{
-	font-family: 'Droid Sans', sans-serif;
-	color: rgba(200, 200, 200, 0.5);
-	background-color: rgba(255, 255, 255, 0.05);
-	border: none;
-	width: 50px;
-	float: right;
+input,
+input[type="checkbox"] {
+    font-family: 'Droid Sans', sans-serif;
+    color: rgba(200, 200, 200, 0.5);
+    background-color: rgba(255, 255, 255, 0.05);
+    border: none;
+    width: 50px;
+    float: right;
 }
 
-#canvas
-{
-	position: absolute;
-	top: 0;left: 0;
-	z-index: -1;
+#canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
 }

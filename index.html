@@ -4,7 +4,6 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Dustin Raimondi</title>
-
     <script src="shiny.js" type="text/javascript"></script>
     <link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
     <link href='styles.css' rel='stylesheet' type='text/css'>
@@ -17,41 +16,42 @@
     <canvas></canvas>
     <form onchange="updateForm()">
         logFPS(console):
-        <input type="checkbox" name="logFPS" placeholder=false onchange="updateForm(name,value,placeholder)"><br>
-        maxNodeCount:
-        <input type="number" name="maxNodeCount" placeholder=50 onchange="updateForm(name,value,placeholder)"><br>
-        backgroundColor:
-        <input type="text" name="backgroundColor" placeholder=false onchange="updateForm(name,value,placeholder)"><br>
-        lineColor:
-        <input type="text" name="lineColor" placeholder="#ffffff" onchange="updateForm(name,value,placeholder)"><br>
-        particleColor:
-        <input type="text" name="particleColor" placeholder=null onchange="updateForm(name,value,placeholder)"><br>
-        particlesPerFrame:
-        <input type="number" name="particlesPerFrame" placeholder=2 onchange="updateForm(name,value,placeholder)"><br>
-        bloomMultiplier:
-        <input type="number" name="bloomMultiplier" placeholder=2 onchange="updateForm(name,value,placeholder)"><br>
-        particleMaxVelocityLeft:
-        <input type="number" name="particleMaxVelocityLeft" placeholder=40 onchange="updateForm(name,value,placeholder)"><br>
-        particleMaxVelocityRight:
-        <input type="number" name="particleMaxVelocityRight" placeholder=40 onchange="updateForm(name,value,placeholder)"><br>
-        particleMaxVelocityUp:
-        <input type="number" name="particleMaxVelocityUp" placeholder=40 onchange="updateForm(name,value,placeholder)"><br>
-        particleMaxVelocityDown:
-        <input type="number" name="particleMaxVelocityDown" placeholder=40 onchange="updateForm(name,value,placeholder)"><br>
-        lineWidth:
-        <input type="number" name="lineWidth" placeholder=75 onchange="updateForm(name,value,placeholder)"><br>
-        particleMaxAge:
-        <input type="number" name="particleMaxAge" placeholder=100 onchange="updateForm(name,value,placeholder)"><br>
-        particleMinAge:
-        <input type="number" name="particleMinAge" placeholder=10 onchange="updateForm(name,value,placeholder)"><br>
-        particleMaxSize:
-        <input type="number" name="particleMaxSize" placeholder=2 onchange="updateForm(name,value,placeholder)"><br>
-        particleMinSize:
-        <input type="number" name="particleMinSize" placeholder=1 onchange="updateForm(name,value,placeholder)"><br>
-        maxFPS:
-        <input type="number" name="maxFPS" placeholder=60 onchange="updateForm(name,value,placeholder)"><br>
-        minFPS:
-        <input type="number" name="minFPS" placeholder=12 onchange="updateForm(name,value,placeholder)"><br>
+        <input type="checkbox" name="logFPS" placeholder=false onchange="updateForm(name,value,placeholder)">
+        <br> maxNodeCount:
+        <input type="number" name="maxNodeCount" placeholder=50 onchange="updateForm(name,value,placeholder)">
+        <br> backgroundColor:
+        <input type="text" name="backgroundColor" placeholder=false onchange="updateForm(name,value,placeholder)">
+        <br> lineColor:
+        <input type="text" name="lineColor" placeholder="#ffffff" onchange="updateForm(name,value,placeholder)">
+        <br> particleColor:
+        <input type="text" name="particleColor" placeholder=null onchange="updateForm(name,value,placeholder)">
+        <br> particlesPerFrame:
+        <input type="number" name="particlesPerFrame" placeholder=2 onchange="updateForm(name,value,placeholder)">
+        <br> bloomMultiplier:
+        <input type="number" name="bloomMultiplier" placeholder=2 onchange="updateForm(name,value,placeholder)">
+        <br> particleMaxVelocityLeft:
+        <input type="number" name="particleMaxVelocityLeft" placeholder=40 onchange="updateForm(name,value,placeholder)">
+        <br> particleMaxVelocityRight:
+        <input type="number" name="particleMaxVelocityRight" placeholder=40 onchange="updateForm(name,value,placeholder)">
+        <br> particleMaxVelocityUp:
+        <input type="number" name="particleMaxVelocityUp" placeholder=40 onchange="updateForm(name,value,placeholder)">
+        <br> particleMaxVelocityDown:
+        <input type="number" name="particleMaxVelocityDown" placeholder=40 onchange="updateForm(name,value,placeholder)">
+        <br> lineWidth:
+        <input type="number" name="lineWidth" placeholder=75 onchange="updateForm(name,value,placeholder)">
+        <br> particleMaxAge:
+        <input type="number" name="particleMaxAge" placeholder=100 onchange="updateForm(name,value,placeholder)">
+        <br> particleMinAge:
+        <input type="number" name="particleMinAge" placeholder=10 onchange="updateForm(name,value,placeholder)">
+        <br> particleMaxSize:
+        <input type="number" name="particleMaxSize" placeholder=2 onchange="updateForm(name,value,placeholder)">
+        <br> particleMinSize:
+        <input type="number" name="particleMinSize" placeholder=1 onchange="updateForm(name,value,placeholder)">
+        <br> maxFPS:
+        <input type="number" name="maxFPS" placeholder=60 onchange="updateForm(name,value,placeholder)">
+        <br> minFPS:
+        <input type="number" name="minFPS" placeholder=12 onchange="updateForm(name,value,placeholder)">
+        <br>
     </form>
 </body>
 
