@@ -3,7 +3,7 @@ Make something shiny they said...
 
 [Live version here](http://dustin.raimondi.rocks/shiny)
 
-Varibles you can play with from in the source or from the console:
+Variables you can play with:
 ```
 maxNodeCount: 50 - controls length of line
 backgroundColor: "#202520"
