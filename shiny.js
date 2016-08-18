@@ -1,36 +1,37 @@
 //shiny.js, written by raimondi1337//////////////////////////////////
 //settings you can play with/////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////
-var maxNodeCount = 50; //controls length of line
-var backgroundColor = "#202520";
-var logFPS = false; //enabling reduces fps...
+var settings = {};
+settings.maxNodeCount = 50; //controls length of line
+settings.backgroundColor = "#202520";
+settings.logFPS = false; //enabling reduces fps...
 
-var lineColor = "#00FF00";//use null for random color!
-var particleColor = null;//use null for random colors!
+settings.lineColor = "#00FF00";//use null for random color!
+settings.particleColor = null;//use null for random colors!
 
-var particlesPerFrame = 2;
-var bloomMultiplier = 2;
+window.settings.particlesPerFrame = 2;
+settings.bloomMultiplier = 2;
 
-var particleMaxVelocityLeft = 40; 
-var particleMaxVelocityRight = 40; 
-var particleMaxVelocityUp = 40; 
-var particleMaxVelocityDown = 40; 
+settings.particleMaxVelocityLeft = 40; 
+settings.particleMaxVelocityRight = 40; 
+settings.particleMaxVelocityUp = 40; 
+settings.particleMaxVelocityDown = 40; 
 
-var lineWidth = 0.75;
+settings.lineWidth = 0.75;
 
-var particleMaxAge = 100; //maximum age of particles in frames
-var particleMinAge = 10; //minimum age of particles in frames
+settings.particleMaxAge = 100; //maximum age of particles in frames
+settings.particleMinAge = 10; //minimum age of particles in frames
 
-var particleMaxSize = 2;
-var particleMinSize = 1;
+settings.particleMaxSize = 2;
+settings.particleMinSize = 1;
 
-var maxFPS = 60; //not tested above 60, my 144hz monitor is back in NY
-var minFPS = 12; //minimum desired FPS
+settings.maxFPS = 60; //not tested above 60, my 144hz monitor is back in NY
+settings.minFPS = 12; //minimum desired FPS
 /////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////
 
-var dt;//deltatime
+var dt;//deltatime so that the animation 'moves faster' instead of locking up under heavy load
 var nodes = new Array();//nodes for line drawing
 var particles = new Array();//particles for... particle effects
 var canvas;//the canvas on the splash screen
@@ -71,7 +72,7 @@ function init() {
 	detectBrowser();
 	
 	//prime background color
-	ctx.fillStyle = backgroundColor;
+	ctx.fillStyle = settings.backgroundColor;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 			
 	//run animation
@@ -118,7 +119,7 @@ function clearBackground() {
 			ctx.clearRect(0, 0, canvas.width, canvas.height);
 	}
 	else{
-			ctx.fillStyle = backgroundColor;
+			ctx.fillStyle = settings.backgroundColor;
     		ctx.fillRect(0, 0, canvas.width, canvas.height);
 	}
 	
@@ -136,14 +137,14 @@ function updateNodes() {
         nodes.push(point);
     }
 
-    if (nodes.length > maxNodeCount) {//limit node array size to 10 nodes, add more nodes to make longer lines
+    if (nodes.length > settings.maxNodeCount) {//limit node array size to 10 nodes, add more nodes to make longer lines
         nodes.splice(0, 1);
     }
 }
 
 function drawLine() {//draw line between all existing nodes
-    ctx.lineWidth = lineWidth;
-    ctx.strokeStyle = lineColor || randomColor();
+    ctx.lineWidth = settings.lineWidth;
+    ctx.strokeStyle = settings.lineColor || randomColor();
     ctx.beginPath();
 	ctx.moveTo(nodes[1].x, nodes[1].y);
 	for (var i = 2; i < nodes.length; i++) {
@@ -154,25 +155,25 @@ function drawLine() {//draw line between all existing nodes
 
 function createParticle(){
 	var particle = new Object();
-    particle.color = particleColor || randomColor();
+    particle.color = settings.particleColor || randomColor();
     particle.x = mouse.x;
     particle.y = mouse.y;
-    particle.velX = getRandom(-particleMaxVelocityLeft, particleMaxVelocityRight);
-    particle.velY = getRandom(-particleMaxVelocityUp, particleMaxVelocityDown);
+    particle.velX = getRandom(-settings.particleMaxVelocityLeft, settings.particleMaxVelocityRight);
+    particle.velY = getRandom(-settings.particleMaxVelocityUp, settings.particleMaxVelocityDown);
     particle.age = 0;
-    particle.maxAge = getRandom(particleMinAge, particleMaxAge);
-    particle.size = getRandom(particleMinSize, particleMaxSize);
+    particle.maxAge = getRandom(settings.particleMinAge, settings.particleMaxAge);
+    particle.size = getRandom(settings.particleMinSize, settings.particleMaxSize);
 	return(particle);
 }
 
 function updateParticles() {
 	//create new particles
 	if(bloom){
-		for (var i = 0; i < particlesPerFrame * bloomMultiplier; i++){
+		for (var i = 0; i < settings.particlesPerFrame * settings.bloomMultiplier; i++){
 			particles.push(createParticle());
 		}
 	} else {
-		for (var i = 0; i < particlesPerFrame; i++){
+		for (var i = 0; i < settings.particlesPerFrame; i++){
 			particles.push(createParticle());
 		}
 	}
@@ -231,12 +232,16 @@ function calculateDeltaTime(){
 	var now, fps;
 	now = (+new Date);
 	fps = 1000/(now - lastTime);
-	fps = clamp(fps,minFPS,maxFPS);
-	if (logFPS) { console.log(fps) };
+	fps = clamp(fps,settings.minFPS,settings.maxFPS);
+	if (settings.logFPS) { console.log(fps) };
 	lastTime=now;
 	return 1/fps;
 }
 
 function randomColor() {
 	return '#' + Math.floor(Math.random()*16777215).toString(16);
+}
+
+function updateForm(name, value, placeholder) {
+	settings[name] = value || placeholder;
 }
